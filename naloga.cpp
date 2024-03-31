@@ -26,7 +26,7 @@ void Izpis_Stevil(const vector<unsigned char> &A) {
     }
 }
 
-void countingSort(vector<unsigned char>& A, int eksponent) {
+void countingSort(vector<unsigned char> &A, int eksponent) {
     vector<unsigned char> output(A.size());
     vector<int> count(256, 0);
 
@@ -48,7 +48,9 @@ void countingSort(vector<unsigned char>& A, int eksponent) {
     }
 }
 
-void radixSort(unsigned char A[], int velikost) {
+void radixSort(vector<unsigned char> &A) {
+    for (int eksponent = 0; eksponent < 8; eksponent++)
+        countingSort(A, eksponent);
 }
 
 int main(int argc, const char* argv[]) {
