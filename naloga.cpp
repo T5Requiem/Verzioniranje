@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-bool Branje_Stevil(vector<unsigned char> &vec, const char s[]) {
+bool Branje_Stevil(vector<unsigned char> &A, const char s[]) {
     ifstream input(s);
 	unsigned int st;
 
@@ -11,9 +11,10 @@ bool Branje_Stevil(vector<unsigned char> &vec, const char s[]) {
 	}
 
 	while (input >> st) {
-		vec.push_back(static_cast<unsigned char>(st));
+		A.push_back(static_cast<unsigned char>(st));
 		while (isspace(input.peek())) input.get();
 	}
+
 	input.close();
 	return true;
 }
@@ -49,8 +50,9 @@ void countingSort(vector<unsigned char> &A, int eksponent) {
 }
 
 void radixSort(vector<unsigned char> &A) {
-    for (int eksponent = 0; eksponent < 8; eksponent++)
+    for (int eksponent = 0; eksponent < 8; eksponent++) {
         countingSort(A, eksponent);
+    }
 }
 
 int main(int argc, const char* argv[]) {
