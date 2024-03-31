@@ -59,6 +59,8 @@ int main(int argc, const char* argv[]) {
     if (argc < 2) return 0;
     if (!Branje_Stevil(A, argv[1])) return 0;
 
+    radixSort(A);
+
     Izpis_Stevil(A);
 
 	return 0;
