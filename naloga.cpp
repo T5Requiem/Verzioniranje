@@ -18,10 +18,10 @@ bool Branje_Stevil(vector<unsigned char> &vec, const char s[]) {
 	return true;
 }
 
-void Izpis_Stevil(const vector<unsigned char> &vec) {
+void Izpis_Stevil(const vector<unsigned char> &A) {
     ofstream output("out.txt");
 
-	for (unsigned char ch : vec) {
+	for (unsigned char ch : A) {
         output << static_cast<unsigned int>(ch) << ' ';
     }
 }
@@ -56,4 +56,8 @@ int main(int argc, const char* argv[]) {
 
     if (argc < 2) return 0;
     if (!Branje_Stevil(A, argv[1])) return 0;
+
+    Izpis_Stevil(A);
+
+	return 0;
 }
